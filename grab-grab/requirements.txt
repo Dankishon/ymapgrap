@@ -3,3 +3,4 @@ lxml>=4.6.5
 selenium==3.141.0
 soupsieve==2.2.1
 urllib3==1.26.18
+selenium webdriver-manager
