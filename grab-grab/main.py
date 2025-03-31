@@ -111,14 +111,16 @@ class CoordinateGrabber:
             try:
                 show_btn = driver.find_element(By.XPATH, "//*[contains(text(), 'Показать телефон')]")
                 driver.execute_script("arguments[0].click();", show_btn)
-                sleep(1)
+                sleep(1.5)
             except NoSuchElementException:
                 pass
 
-            phone_element = driver.find_element(By.CSS_SELECTOR, 'a[href^="tel:"]')
+            phone_element = driver.find_element(By.CLASS_NAME, "orgpage-phones-view__phone-number")
             return phone_element.text.strip() if phone_element else "Нет телефона"
         except:
             return "Нет телефона"
+
+
 
     def get_site(self, soup):
         try:
